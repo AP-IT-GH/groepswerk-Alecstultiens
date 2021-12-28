@@ -12,10 +12,12 @@ public class GameWonScript : MonoBehaviour
     {
         gameObject.SetActive(true);
         pointsText.text = $"You won with {score.ToString()} score";
+        Time.timeScale = 0;
     }
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("Create_with_VR_Starter_Scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 }
