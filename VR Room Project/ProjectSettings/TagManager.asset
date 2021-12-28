@@ -8,6 +8,7 @@ TagManager:
   - Target
   - DontHitTarget
   - Projectile
+  - Dht
   layers:
   - Default
   - TransparentFX

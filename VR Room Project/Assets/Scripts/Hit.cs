@@ -4,23 +4,33 @@ using UnityEngine;
 
 public class Hit : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public AudioClip audioClip;
+    void Start()
     {
 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
         if (other.gameObject.tag == "Projectile")
         {
-            Debug.Log("HIIIT");
-            
-            if(gameObject.tag == "Target")
+            if (audioClip)
             {
-                Debug.Log("HIT TARGET");
+                if (gameObject.GetComponent<AudioSource>())
+                {
+                    gameObject.GetComponent<AudioSource>().PlayOneShot(audioClip);
+                }
+                else
+                {
+                    AudioSource.PlayClipAtPoint(audioClip, transform.position);
+                }
             }
-            if (gameObject.tag == "DontHitTarget")
-            {
-                Debug.Log("HIT WRONG TARGET");
-            }
-
-
         }
     }
+
 }

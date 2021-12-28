@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9187386710568550088}
-  - component: {fileID: 8350605988258830310}
+  - component: {fileID: 7628241191329217068}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806858221016025184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.224571, y: 5.673066, z: 4.3421817}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7255746078555907250}
@@ -128,19 +128,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8350605988258830310
-BoxCollider:
+--- !u!114 &7628241191329217068
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806858221016025184}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.058226585, y: 0.24979973, z: 0.38247252}
-  m_Center: {x: 0.0004696846, y: 0.050694942, z: 0.15097785}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b06873abf107e439f64224e1d436b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1639131542605403032, guid: 2560a2f57c9040d46b6fba18c6e08d66, type: 3}
+  shootRate: 0.2
 --- !u!1 &2719256496734908693
 GameObject:
   m_ObjectHideFlags: 0
