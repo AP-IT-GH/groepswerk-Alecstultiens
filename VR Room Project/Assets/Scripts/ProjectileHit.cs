@@ -65,7 +65,7 @@ public class ProjectileHit : MonoBehaviour
 
         GameObject chosenTarget;
 
-        random = Random.Range(1, 12);
+        random = Random.Range(0, 2);
         chosenTarget = targetToChoose[random];
 
         var chosenColor = chosenTarget.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0);
@@ -73,6 +73,7 @@ public class ProjectileHit : MonoBehaviour
         chosenTarget.transform.GetChild(1).tag = "Target";
 
         currentTarget.gameObject.tag = "Dht";
+        ScoreManager.instance.AddPoint();
 
     }
 }
