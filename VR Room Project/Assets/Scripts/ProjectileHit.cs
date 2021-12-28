@@ -65,7 +65,7 @@ public class ProjectileHit : MonoBehaviour
 
         GameObject chosenTarget;
 
-        random = Random.Range(0, 2);
+        random = Random.Range(0, 12);
         chosenTarget = targetToChoose[random];
 
         var chosenColor = chosenTarget.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0);
