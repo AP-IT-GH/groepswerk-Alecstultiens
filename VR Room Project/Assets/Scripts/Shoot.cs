@@ -24,7 +24,7 @@ public class Shoot : MonoBehaviour
         if (shoot == 1 && timer >= shootRate)
         {
             GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
-            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.VelocityChange);
+            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.VelocityChange);
             start = true;
             timer = 0f;
 
