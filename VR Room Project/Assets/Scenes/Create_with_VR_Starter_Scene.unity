@@ -2428,7 +2428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173508, guid: 84e2da24fceb32c45a3059b4c1d82538, type: 3}
       propertyPath: m_TagString
-      value: DontHitTarget
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 438956, guid: 84e2da24fceb32c45a3059b4c1d82538, type: 3}
       propertyPath: m_RootOrder
@@ -8669,7 +8669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173508, guid: 84e2da24fceb32c45a3059b4c1d82538, type: 3}
       propertyPath: m_TagString
-      value: DontHitTarget
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 438956, guid: 84e2da24fceb32c45a3059b4c1d82538, type: 3}
       propertyPath: m_RootOrder
