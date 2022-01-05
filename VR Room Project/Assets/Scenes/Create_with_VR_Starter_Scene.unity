@@ -440,7 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!1001 &60269539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3221,7 +3220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!4 &387816217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3667984597200915304, guid: 6f2d1921af45843f0a9af92d7b506d6a, type: 3}
@@ -3577,7 +3575,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 439308084}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77237833}
+        m_TargetAssemblyTypeName: GameWonScript, Assembly-CSharp
+        m_MethodName: RestartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &439308084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3690,7 +3700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!1001 &443214292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3769,7 +3778,7 @@ PrefabInstance:
     - target: {fileID: 7784989957846967784, guid: 84e2da24fceb32c45a3059b4c1d82538, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bc4c608ec07876a49bcd11d0ce25dafa, type: 2}
+      objectReference: {fileID: 2100000, guid: 9ff312f7f0177924bad83d3e5cfdc04e, type: 2}
     - target: {fileID: 8350241503574334549, guid: 84e2da24fceb32c45a3059b4c1d82538, type: 3}
       propertyPath: m_Size.z
       value: 0.1942288
@@ -4268,7 +4277,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 9187386710568550088, guid: 0fc84b413937fc04e876214111a3a08f, type: 3}
+  m_ModelPrefab: {fileID: 189091626146063571, guid: 464d2b315a1ed6b408948cc2fc04e8f7, type: 3}
   m_ModelTransform: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
@@ -4387,7 +4396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!1 &501574645
 GameObject:
   m_ObjectHideFlags: 0
@@ -7651,7 +7659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!1001 &934708154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13157,7 +13164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!1001 &1710383895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14282,7 +14288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!4 &1884897836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3667984597200915304, guid: 6f2d1921af45843f0a9af92d7b506d6a, type: 3}
@@ -14429,7 +14434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!1001 &1906137846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15645,7 +15649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!4 &2045683665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 928215863046454292, guid: a53252e410a5546d6a33587a0cbd2204, type: 3}
@@ -16077,7 +16080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c1290442c0812408399fced188f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
 --- !u!1001 &2117302355
 PrefabInstance:
   m_ObjectHideFlags: 0
