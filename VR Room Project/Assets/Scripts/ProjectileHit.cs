@@ -51,6 +51,7 @@ public class ProjectileHit : MonoBehaviour
         } else
         {
             Debug.Log("MISSED");
+            Destroy(gameObject);
         }
         Destroy(gameObject);
     }
@@ -67,7 +68,7 @@ public class ProjectileHit : MonoBehaviour
 
         GameObject chosenTarget;
 
-        random = Random.Range(0, 12);
+        random = Random.Range(0, 11);
         chosenTarget = targetToChoose[random];
 
         var chosenColor = chosenTarget.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0);

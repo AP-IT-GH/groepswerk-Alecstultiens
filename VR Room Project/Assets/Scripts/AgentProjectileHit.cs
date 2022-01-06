@@ -29,7 +29,7 @@ public class AgentProjectileHit : MonoBehaviour
         for (int i = 1; i < 13; i++)
         {
             targets.Add(GameObject.Find("Target" + i));
-            Debug.Log(GameObject.Find("Target" + i));
+            //Debug.Log(GameObject.Find("Target" + i));
         }
 
     }
@@ -43,7 +43,10 @@ public class AgentProjectileHit : MonoBehaviour
             Debug.Log("HIT");
 
             GetNewTarget(other.gameObject);
-
+            AgentBehaviour.agentInstance.AddReward(1f);
+            AgentBehaviour.agentInstance.hitTarget = true;
+            AgentBehaviour.agentInstance.EndEpisode();
+            Debug.Log("New episode");
         }
         else if (other.gameObject.CompareTag("Dht"))
         {
@@ -68,7 +71,7 @@ public class AgentProjectileHit : MonoBehaviour
 
         GameObject chosenTarget;
 
-        random = Random.Range(0, 12);
+        random = Random.Range(0, 11);
 
 
         chosenTarget = targetToChoose[random];
