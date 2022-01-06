@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class GameWonScript : MonoBehaviour
 {
     public TextMeshProUGUI pointsText;
-    public void Setup(int score)
+    public void Setup(string winner, int score)
     {
         gameObject.SetActive(true);
-        pointsText.text = $"You won with {score.ToString()} score";
+        pointsText.text = $"{winner} won with {score.ToString()} score";
         Time.timeScale = 0;
     }
 

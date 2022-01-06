@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ProjectileHit : MonoBehaviour
+public class AgentProjectileHit : MonoBehaviour
 {
 
     //public GameObject Target1;
@@ -18,20 +18,20 @@ public class ProjectileHit : MonoBehaviour
     //public GameObject Target10;
     //public GameObject Target11;
     //public GameObject Target12;
-    private List<GameObject> targets = new List<GameObject>();
+    List<GameObject> targets = new List<GameObject>();
     public Material Green;
     public Material Default;
 
 
     private void Start()
     {
-        
+
         for (int i = 1; i < 13; i++)
         {
             targets.Add(GameObject.Find("Target" + i));
             Debug.Log(GameObject.Find("Target" + i));
         }
-        
+
     }
 
 
@@ -41,14 +41,15 @@ public class ProjectileHit : MonoBehaviour
         if (other.gameObject.CompareTag("Target"))
         {
             Debug.Log("HIT");
-            
+
             GetNewTarget(other.gameObject);
-            
+
         }
         else if (other.gameObject.CompareTag("Dht"))
         {
             Debug.Log("HIT WRONG ONE");
-        } else
+        }
+        else
         {
             Debug.Log("MISSED");
         }
@@ -68,6 +69,8 @@ public class ProjectileHit : MonoBehaviour
         GameObject chosenTarget;
 
         random = Random.Range(0, 12);
+
+
         chosenTarget = targetToChoose[random];
 
         var chosenColor = chosenTarget.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0);
@@ -75,6 +78,9 @@ public class ProjectileHit : MonoBehaviour
         chosenTarget.transform.GetChild(1).tag = "Target";
 
         currentTarget.gameObject.tag = "Dht";
-        ScoreManager.instance.AddPoint();
+        ScoreManager.instance.AddAgentPoint();
+
     }
 }
+
+
