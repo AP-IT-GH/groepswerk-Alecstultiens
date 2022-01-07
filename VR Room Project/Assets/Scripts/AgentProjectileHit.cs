@@ -5,19 +5,6 @@ using UnityEngine;
 
 public class AgentProjectileHit : MonoBehaviour
 {
-
-    //public GameObject Target1;
-    //public GameObject Target2;
-    //public GameObject Target3;
-    //public GameObject Target4;
-    //public GameObject Target5;
-    //public GameObject Target6;
-    //public GameObject Target7;
-    //public GameObject Target8;
-    //public GameObject Target9;
-    //public GameObject Target10;
-    //public GameObject Target11;
-    //public GameObject Target12;
     List<GameObject> targets = new List<GameObject>();
     public Material Green;
     public Material Default;
@@ -29,9 +16,7 @@ public class AgentProjectileHit : MonoBehaviour
         for (int i = 1; i < 13; i++)
         {
             GameObject target = transform.parent.Find("Targets").Find("Target" + i).gameObject;
-
             targets.Add(target);
-            //Debug.Log(GameObject.Find("Target" + i));
         }
 
     }
@@ -43,7 +28,6 @@ public class AgentProjectileHit : MonoBehaviour
         if (other.gameObject.CompareTag("Target"))
         {
             Debug.Log("HIT");
-            AgentBehaviour.agentInstance.shot = 2;
 
             GetNewTarget(other.gameObject);
 
@@ -51,12 +35,10 @@ public class AgentProjectileHit : MonoBehaviour
         else if (other.gameObject.CompareTag("Dht"))
         {
             Debug.Log("HIT WRONG ONE");
-            AgentBehaviour.agentInstance.shot = 1;
 
         }
         else
         {
-            AgentBehaviour.agentInstance.shot = 0;
             Debug.Log("MISSED");
         }
         Destroy(gameObject);

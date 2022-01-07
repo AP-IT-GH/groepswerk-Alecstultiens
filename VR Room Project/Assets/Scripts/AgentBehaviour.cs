@@ -17,9 +17,6 @@ public class AgentBehaviour : Agent
     public float shootRate = 3f;
     public bool hitTarget = false;
 
-    public int shot = 0;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +28,6 @@ public class AgentBehaviour : Agent
         agentInstance = this;
         hitTarget = false;
         shot = 0;
-        //Debug.Log(hitTarget.ToString());
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -74,13 +70,12 @@ public class AgentBehaviour : Agent
                 {
                     hitTarget = true;
                     AddReward(1f);
-                    //Debug.Log("Raycast");
+                    EndEpisode();
                 }
                 if (hit.transform.tag == "Dht")
                 {
                     hitTarget = false;
                     AddReward(-0.003f);
-                    //Debug.Log("Raycast");
                 }
             }
             else
@@ -88,39 +83,11 @@ public class AgentBehaviour : Agent
                 hitTarget = false;
                 AddReward(-0.005f);
             }
-            //CheckReward();
 
             start = true;
             timer = 0f;
         }
     }
-    /*
-    private void CheckReward()
-    {
-
-        if (shot == 0)
-        {
-            // Debug.Log("Hit target shot 0");
-            hitTarget = false;
-
-            AddReward(-0.0009f);
-        } else if (shot == 1)
-        {
-            // Debug.Log("Hit target shot 1");
-            hitTarget = false;
-
-            AddReward(-0.0005f);
-            shot = 0;
-        }
-        else if (shot == 2)
-        {
-            hitTarget = true;
-            AddReward(3f);
-           // Debug.Log("Hit target shot 2");
-            shot = 0;
-
-        };
-    }*/
 
     // Update is called once per frame
     void Update()
@@ -157,30 +124,17 @@ public class AgentBehaviour : Agent
             var layerMask = 1 << LayerMask.NameToLayer("Targets");
             if (Physics.Raycast(gun.transform.position, transform.forward, out var hit, 20f, layerMask))
             {
-               // GameObject targets = transform.parent.transform.Find("Targets").gameObject;
                if (hit.transform.tag == "Target")
                 {
                     hitTarget = true;
                     AddReward(1f);
                     Debug.Log("Raycast");
                 }
-               /* for (int i = 1; i < 13; i++)
-                {
-                    GameObject target = targets.transform.Find("Target" + i).gameObject;
-
-                    if (target.transform.GetChild(1).tag == "Target")
-                    {
-                        hitTarget = true;
-                        AddReward(1f);
-                        Debug.Log("Raycast");
-                    }
-                } */
             }
             else
             {
                 AddReward(-0.033f);
             }
-            //CheckReward();
 
             start = true;
             timer = 0f;

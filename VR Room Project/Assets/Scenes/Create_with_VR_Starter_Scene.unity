@@ -16564,6 +16564,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2051802474}
     m_Modifications:
+    - target: {fileID: 258137371619264545, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 709027046362453649, guid: 880c02f5775ee524589721a51da95540, type: 3}
       propertyPath: m_Name
       value: Agent
@@ -16592,6 +16596,10 @@ PrefabInstance:
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 2051802474}
+    - target: {fileID: 709027046362453653, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: c1abcbe4d6a60274da072f7feede58a8, type: 3}
     - target: {fileID: 709027046362453653, guid: 880c02f5775ee524589721a51da95540, type: 3}
       propertyPath: m_BehaviorName
       value: Mover
@@ -16680,9 +16688,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 709027047397511708, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 709027047397511709, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c4e13a9023f208e47800f3b0959d0bc2, type: 2}
+    - target: {fileID: 709027047685241083, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 709027047685241086, guid: 880c02f5775ee524589721a51da95540, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.181
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637369927702766567, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714720811530729626, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714720811530729626, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880c02f5775ee524589721a51da95540, type: 3}
