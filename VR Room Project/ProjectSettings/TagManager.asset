@@ -9,11 +9,12 @@ TagManager:
   - DontHitTarget
   - Projectile
   - Dht
+  - Range
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Targets
   - Water
   - UI
   - 

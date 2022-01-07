@@ -28,7 +28,9 @@ public class AgentProjectileHit : MonoBehaviour
 
         for (int i = 1; i < 13; i++)
         {
-            targets.Add(GameObject.Find("Target" + i));
+            GameObject target = transform.parent.Find("Targets").Find("Target" + i).gameObject;
+
+            targets.Add(target);
             //Debug.Log(GameObject.Find("Target" + i));
         }
 
@@ -41,19 +43,20 @@ public class AgentProjectileHit : MonoBehaviour
         if (other.gameObject.CompareTag("Target"))
         {
             Debug.Log("HIT");
+            AgentBehaviour.agentInstance.shot = 2;
 
             GetNewTarget(other.gameObject);
-            AgentBehaviour.agentInstance.AddReward(1f);
-            AgentBehaviour.agentInstance.hitTarget = true;
-            AgentBehaviour.agentInstance.EndEpisode();
-            Debug.Log("New episode");
+
         }
         else if (other.gameObject.CompareTag("Dht"))
         {
             Debug.Log("HIT WRONG ONE");
+            AgentBehaviour.agentInstance.shot = 1;
+
         }
         else
         {
+            AgentBehaviour.agentInstance.shot = 0;
             Debug.Log("MISSED");
         }
         Destroy(gameObject);
