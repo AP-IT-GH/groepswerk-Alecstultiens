@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
     public TextMeshProUGUI scoreText;
     int score = 0;
+    int agentScore = 0;
+    float agentReward = 0;
     public int ScoreToWin;
     public GameWonScript GameWonScript;
 
@@ -18,11 +20,15 @@ public class ScoreManager : MonoBehaviour
         instance = this;
     }
 
+
+
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
 
-        scoreText.text = "SCORE: " + score.ToString() + "/" + ScoreToWin.ToString();
+        scoreText.text = "SCORE: " + score.ToString() + "/" + ScoreToWin.ToString()
+            + "\n" + "AGENT SCORE: " + agentScore.ToString() + "/" + ScoreToWin.ToString()
+            + "\n" + "AGENT REWARD SCORE: " + agentReward.ToString();
 
     }
 
@@ -32,12 +38,27 @@ public class ScoreManager : MonoBehaviour
         if (score >= ScoreToWin)
         {
             scoreText.text = "";
-            GameWonScript.Setup(score);
-        } else
-        {
-            scoreText.text = "SCORE: " + score.ToString() + "/" + ScoreToWin.ToString();
+            GameWonScript.Setup("You", score);
         }
+        // else
+        //{
+        //    scoreText.text = "SCORE: " + score.ToString() + "/" + ScoreToWin.ToString();
+        //}
         
     }
 
+    public void AddAgentPoint()
+    {
+        agentScore += 1;
+        if (agentScore >= ScoreToWin)
+        {
+            //scoreText.text = "";
+            //GameWonScript.Setup("Agent", agentScore);
+        }
+    }
+
+    public void UpdateAgentReward(float reward)
+    {
+        agentReward = reward;
+    }
 }
