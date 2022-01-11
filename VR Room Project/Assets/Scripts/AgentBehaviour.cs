@@ -27,7 +27,7 @@ public class AgentBehaviour : Agent
     {
         agentInstance = this;
         hitTarget = false;
-        shot = 0;
+        //shot = 0;
     }
 
     public override void CollectObservations(VectorSensor sensor)
