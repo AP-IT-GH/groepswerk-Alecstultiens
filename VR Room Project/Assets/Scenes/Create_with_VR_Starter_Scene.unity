@@ -16526,12 +16526,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 511006363}
     - target: {fileID: 709027046362453652, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: timer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 709027046362453652, guid: 880c02f5775ee524589721a51da95540, type: 3}
       propertyPath: MaxStep
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 709027046362453652, guid: 880c02f5775ee524589721a51da95540, type: 3}
       propertyPath: shootRate
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 709027046362453652, guid: 880c02f5775ee524589721a51da95540, type: 3}
       propertyPath: rotationSpeed
@@ -16552,6 +16556,10 @@ PrefabInstance:
     - target: {fileID: 709027046362453653, guid: 880c02f5775ee524589721a51da95540, type: 3}
       propertyPath: m_BehaviorName
       value: Mover
+      objectReference: {fileID: 0}
+    - target: {fileID: 709027046362453653, guid: 880c02f5775ee524589721a51da95540, type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 709027046362453653, guid: 880c02f5775ee524589721a51da95540, type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size

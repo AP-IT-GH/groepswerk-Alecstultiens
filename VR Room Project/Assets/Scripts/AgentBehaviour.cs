@@ -26,8 +26,7 @@ public class AgentBehaviour : Agent
     public override void OnEpisodeBegin()
     {
         agentInstance = this;
-        hitTarget = false;
-        //shot = 0;
+        hitTarget = false; 
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -58,9 +57,16 @@ public class AgentBehaviour : Agent
 
             Transform targetTransform = this.transform.parent.transform;
 
-            GameObject newProjectile = Instantiate(agentProjectile, gun.transform.position + transform.forward, transform.rotation);
-            newProjectile.transform.parent = targetTransform;
-            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.VelocityChange);
+            if (timer >= shootRate)
+            {
+                GameObject newProjectile = Instantiate(agentProjectile, gun.transform.position + transform.forward, transform.rotation);
+                newProjectile.transform.parent = targetTransform;
+                newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.VelocityChange);
+
+                start = true;
+                timer = 0f;
+            }
+
 
 
             var layerMask = 1 << LayerMask.NameToLayer("Targets");
@@ -84,62 +90,19 @@ public class AgentBehaviour : Agent
                 AddReward(-0.005f);
             }
 
-            start = true;
-            timer = 0f;
         }
     }
 
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var continuousActionsOut = actionsOut.DiscreteActions;
+        continuousActionsOut[0] = Input.GetKey(KeyCode.LeftArrow) ? 1 : 0;
+        continuousActionsOut[0] = Input.GetKey(KeyCode.RightArrow) ? 2 : 0;
+        continuousActionsOut[1] = Input.GetKey(KeyCode.LeftShift) ? 1 : 0; 
+    }
     // Update is called once per frame
     void Update()
     {
-        ScoreManager.instance.UpdateAgentReward(GetCumulativeReward());
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            float rotation = rotationSpeed * Time.deltaTime;
-            transform.Rotate(0, rotation, 0);
-        }
-
-       if (GetCumulativeReward() > 2 || GetCumulativeReward() < -2)
-        {
-            EndEpisode();
-            Debug.Log("New episode");
-        } 
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            float rotation = rotationSpeed * Time.deltaTime * -1;
-            transform.Rotate(0, rotation, 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            hitTarget = false;
-            Transform targetTransform = this.transform.parent.transform;
-
-            GameObject newProjectile = Instantiate(agentProjectile, gun.transform.position  + transform.forward , transform.rotation);
-            newProjectile.transform.parent = targetTransform;
-            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.VelocityChange);
-
-
-            var layerMask = 1 << LayerMask.NameToLayer("Targets");
-            if (Physics.Raycast(gun.transform.position, transform.forward, out var hit, 20f, layerMask))
-            {
-               if (hit.transform.tag == "Target")
-                {
-                    hitTarget = true;
-                    AddReward(1f);
-                    Debug.Log("Raycast");
-                }
-            }
-            else
-            {
-                AddReward(-0.033f);
-            }
-
-            start = true;
-            timer = 0f;
-        }
-
         if (start)
         {
             if (timer < shootRate)
