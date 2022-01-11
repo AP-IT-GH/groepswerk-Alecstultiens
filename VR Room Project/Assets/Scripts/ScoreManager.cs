@@ -27,8 +27,7 @@ public class ScoreManager : MonoBehaviour
     {
 
         scoreText.text = "SCORE: " + score.ToString() + "/" + ScoreToWin.ToString()
-            + "\n" + "AGENT SCORE: " + agentScore.ToString() + "/" + ScoreToWin.ToString()
-            + "\n" + "AGENT REWARD SCORE: " + agentReward.ToString();
+            + "\n" + "AGENT SCORE: " + agentScore.ToString() + "/" + ScoreToWin.ToString();
 
     }
 
@@ -40,10 +39,6 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = "";
             GameWonScript.Setup("You", score);
         }
-        // else
-        //{
-        //    scoreText.text = "SCORE: " + score.ToString() + "/" + ScoreToWin.ToString();
-        //}
         
     }
 
@@ -52,13 +47,9 @@ public class ScoreManager : MonoBehaviour
         agentScore += 1;
         if (agentScore >= ScoreToWin)
         {
-            //scoreText.text = "";
-            //GameWonScript.Setup("Agent", agentScore);
+            scoreText.text = "";
+            GameWonScript.Setup("Agent", agentScore);
         }
     }
 
-    public void UpdateAgentReward(float reward)
-    {
-        agentReward = reward;
-    }
 }
